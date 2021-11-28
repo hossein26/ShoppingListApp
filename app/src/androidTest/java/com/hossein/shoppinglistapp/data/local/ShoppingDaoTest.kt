@@ -77,7 +77,7 @@ class ShoppingDaoTest {
                 (shoppingItem2.amount * shoppingItem2.price) +
                 (shoppingItem3.amount * shoppingItem3.price)
 
-        assertThat(observeTotalPrice).isEqualTo(totalPrice.toFloat())
+        assertThat(observeTotalPrice).isEqualTo(totalPrice)
     }
 }
 
