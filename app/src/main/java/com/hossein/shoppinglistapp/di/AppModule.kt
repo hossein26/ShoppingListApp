@@ -2,10 +2,13 @@ package com.hossein.shoppinglistapp.di
 
 import android.content.Context
 import androidx.room.Room
+import com.hossein.shoppinglistapp.data.local.ShoppingDao
 import com.hossein.shoppinglistapp.data.local.ShoppingItemDatabase
 import com.hossein.shoppinglistapp.data.remote.PixabayAPI
 import com.hossein.shoppinglistapp.other.Constants.BASE_URL
 import com.hossein.shoppinglistapp.other.Constants.DATABASE_NAME
+import com.hossein.shoppinglistapp.repositories.DefaultShoppingRepository
+import com.hossein.shoppinglistapp.repositories.ShoppingRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -24,6 +27,13 @@ object AppModule {
     fun provideShoppingItemDatabase(
         @ApplicationContext context: Context
     ) = Room.databaseBuilder(context, ShoppingItemDatabase::class.java, DATABASE_NAME).build()
+
+    @Singleton
+    @Provides
+    fun providesDefaultShoppingRepository(
+        dao: ShoppingDao,
+        api: PixabayAPI
+    ) = DefaultShoppingRepository(dao, api) as ShoppingRepository
 
     @Singleton
     @Provides

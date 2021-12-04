@@ -1,7 +1,8 @@
-package com.hossein.shoppinglistapp
+package com.hossein.shoppinglistapp.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.hossein.shoppinglistapp.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
