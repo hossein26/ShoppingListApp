@@ -6,7 +6,6 @@ import com.hossein.shoppinglistapp.data.local.ShoppingItem
 import com.hossein.shoppinglistapp.data.remote.PixabayAPI
 import com.hossein.shoppinglistapp.data.remote.responses.ImageResponse
 import com.hossein.shoppinglistapp.other.Resource
-import retrofit2.Response
 import javax.inject.Inject
 
 class DefaultShoppingRepository @Inject constructor(

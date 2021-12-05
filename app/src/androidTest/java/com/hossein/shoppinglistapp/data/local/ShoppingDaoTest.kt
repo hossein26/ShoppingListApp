@@ -4,6 +4,10 @@ import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.test.filters.SmallTest
 import com.google.common.truth.Truth.assertThat
 import com.hossein.shoppinglistapp.getOrAwaitValue
+import com.hossein.shoppinglistapp.launchFragmentInHiltContainer
+import com.hossein.shoppinglistapp.ui.AddShoppingItemFragment
+import com.hossein.shoppinglistapp.ui.ImagePickFragment
+import com.hossein.shoppinglistapp.ui.ShoppingFragment
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -41,6 +45,13 @@ class ShoppingDaoTest {
     @After
     fun teardown(){
         database.close()
+    }
+
+    @Test
+    fun testLaunchFragmentInHiltContainer(){
+        launchFragmentInHiltContainer<ShoppingFragment> {  }
+        launchFragmentInHiltContainer<ImagePickFragment> {  }
+        launchFragmentInHiltContainer<AddShoppingItemFragment> {  }
     }
 
     @Test
