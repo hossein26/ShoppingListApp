@@ -6,7 +6,7 @@ import com.bumptech.glide.RequestManager
 import com.hossein.shoppinglistapp.adapters.ImageAdapter
 import javax.inject.Inject
 
-class ShoppingFragmentFactory @Inject constructor(
+class TestShoppingFragmentFactory @Inject constructor(
     private val imageAdapter: ImageAdapter,
     private val glide: RequestManager
 ) : FragmentFactory() {
